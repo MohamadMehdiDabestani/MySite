@@ -1,0 +1,107 @@
+
+// responsive
+@media screen and(max-width:1220px) {
+  .my-xp {
+    margin-top: 250px;
+  }
+}
+@media screen and(max-width:980px) {
+  header .header-container div:nth-child(2) {
+    display: none !important;
+  }
+  header .header-container div {
+    width: 100%;
+  }
+  .my-xp {
+    margin-top: 125px;
+  }
+}
+@media screen and(max-width:660px) {
+  header {
+    &.small-header {
+      padding: 20px 15px;
+    }
+    ul {
+      position: fixed;
+      right: -250px;
+      top: -20px;
+      z-index: 9999;
+      height: 100vh;
+      padding: 0;
+      width: 200px;
+      background: #fff;
+    }
+    .header-container {
+      margin-top: 15px;
+    }
+    #ul-nav {
+      -webkit-transition: all 0.3s cubic-bezier(0.99, 0.19, 0.1, 0.57);
+      transition: all 0.3s cubic-bezier(0.99, 0.19, 0.1, 0.57);
+    }
+    ul.active-nav {
+      text-align: right;
+      right: 0;
+      -webkit-box-shadow: 0 0 18px 2px #5050508a;
+      box-shadow: 0 0 18px 2px #5050508a;
+      li {
+        a {
+          color: #222;
+        }
+        padding: 15px !important;
+        margin: 0 !important;
+        border-bottom: 1px solid #eee;
+        display: block;
+        &::before {
+          display: none;
+        }
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+    .icon-responsive {
+      display: block;
+      position: relative;
+      height: 20px;
+      width: 40px;
+      cursor: pointer;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: white;
+        top: 0;
+        right: 0;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width:20px;
+        height: 2px;
+        background: white;
+        top: 15px;
+        left: 0;
+      }
+      span {
+        position: absolute;
+        width: 100%;
+        background: white;
+        top: 8px;
+        right: 0;
+        height: 2px;
+        // display: block;
+      }
+    }
+  }
+
+  .my-xp {
+    margin-top: 140px !important;
+  }
+}
+
+@media screen and(max-width:450px) {
+  .my-xp {
+    margin-top: 190px !important;
+  }
+}
