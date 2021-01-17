@@ -1,4 +1,42 @@
-
+@-webkit-keyframes shine {
+  from {
+    opacity: 0;
+    left: -50%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@-moz-keyframes shine {
+  from {
+    opacity: 0;
+    left: -50%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: -50%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
 // responsive
 @media screen and(max-width:1220px) {
   .my-xp {
@@ -77,7 +115,7 @@
       &::after {
         position: absolute;
         content: "";
-        width:20px;
+        width: 20px;
         height: 2px;
         background: white;
         top: 15px;
@@ -103,5 +141,21 @@
 @media screen and(max-width:450px) {
   .my-xp {
     margin-top: 190px !important;
+  }
+}
+
+@media screen and(max-width:388px) {
+  .my-xp {
+    margin-top: 240px !important;
+  }
+}
+@media screen and(max-width:359px) {
+  .my-xp {
+    margin-top: 300px !important;
+  }
+}
+@media screen and(max-width:324px) {
+  .my-xp {
+    margin-top: 340px !important;
   }
 }

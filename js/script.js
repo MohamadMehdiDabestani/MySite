@@ -1,7 +1,8 @@
 let body = document.getElementsByTagName("body");
-let header = document.querySelector('header');
+let header = document.querySelector("header");
 let navResponsive = document.querySelector("#ul-nav");
-let shadowNav = document.createElement('div')
+let shadowNav = document.createElement("div");
+let asidePost = document.querySelector(".info-post");
 document.querySelector(".icon-responsive").addEventListener("click", () => {
   shadowNav.classList.add("shadowNav");
   document.body.appendChild(shadowNav);
@@ -10,6 +11,9 @@ document.querySelector(".icon-responsive").addEventListener("click", () => {
     document.body.removeChild(shadowNav);
   });
 });
-if(header.children.length == 2){
+if (header.children.length == 2) {
   header.classList.add("small-header");
+}
+if (window.innerWidth <= 960) {
+  asidePost.removeAttribute("uk-sticky");
 }

@@ -1,0 +1,127 @@
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محمد مهدی - ثبت پروژه</title>
+    <link rel="stylesheet" href="./css/uikit-rtl.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <link rel="stylesheet" href="./css/responsive.min.css" />
+  </head>
+  <body>
+    <header>
+      <span class="icon-responsive" uk-toggle="target: #ul-nav;cls:active-nav"
+        ><span></span>
+      </span>
+      <ul id="ul-nav">
+        <li>
+          <a href="#">خانه</a>
+        </li>
+        <li>
+          <a href="#">استخدام من</a>
+        </li>
+        <li>
+          <a href="#">پروژه دارم</a>
+        </li>
+      </ul>
+    </header>
+    <div class="uk-container uk-margin-large-top">
+      <div class="form-project">
+        <form action="#">
+          <div class="inputs">
+            <div class="input-cover">
+              <input type="text" id="ProjectEnviroment" required />
+              <label for="ProjectEnviroment">زمینه ی پروژه</label>
+            </div>
+            <div class="input-cover">
+              <input type="text" id="ProjectTechnology" required />
+              <label for="ProjectTechnology">تکنولوژی ها</label>
+              <p>با استفاده از - از یکدیگر جداکنید</p>
+            </div>
+            <div class="input-cover">
+              <input type="number" id="ProjectMoney" required />
+              <label for="ProjectMoney">بودجه</label>
+              <p>به تومان</p>
+            </div>
+          </div>
+          <div class="inputs">
+            <div class="input-cover">
+              <input type="text" id="ProjectTime" required />
+              <label for="ProjectTime">زمان دریافت پروژه</label>
+            </div>
+            <div class="input-cover">
+              <input type="number" id="PhoneNumber" required />
+              <label for="PhoneNumber">شماره ی همراه</label>
+            </div>
+          </div>
+          <div class="input-cover" id="text-area">
+            <textarea id="AboutProject" required></textarea>
+            <label for="AboutProject">توضیحات مرود نیاز برای پروژه</label>
+          </div>
+
+          <p class="uk-margin-small-bottom color-black">
+            از چه طریق با شما در ارتباط باشم ؟
+          </p>
+          <div class="input-cover uk-margin-small-bottom">
+            <input
+              type="radio"
+              class="uk-radio"
+              id="Telegram"
+              name="Conect"
+              required
+            />
+            <label for="Telegram">تلگرام</label>
+          </div>
+          <div class="input-cover">
+            <input
+              type="radio"
+              id="Wahtsap"
+              class="uk-radio"
+              name="Conect"
+              required
+            />
+            <label for="Wahtsap">واتساپ</label>
+          </div>
+          <button type="submit" class="button-more">ارسال</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="custom-shape-divider-top-1609738135">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <div class="uk-container uk-text-center">
+        <h4>با من در ارتباط باشید</h4>
+        <img
+          src="./images/icons8-github-48.png"
+          uk-tooltip="IdGithub"
+          alt="my github"
+        />
+        <img
+          src="./images/icons8-phone-256.png"
+          class="telephone"
+          uk-tooltip="09135377502"
+          alt="my telephone"
+        />
+        <img
+          src="./images/icons8-email-48.png"
+          class="telephone"
+          uk-tooltip="MohamadDev@gmail.com"
+          alt="my email addres"
+        />
+        <p>هرگونه کپی برداری از این وب سایت شرعاً حرام می باشد</p>
+      </div>
+    </footer>
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
