@@ -484,7 +484,7 @@ footer {
     }
     textarea:focus + label,
     textarea:valid + label {
-      top: -20px;
+      top: -22px;
       right: 5px;
       font-size: 14px;
       color: rgb(255, 57, 22);
@@ -493,6 +493,16 @@ footer {
       color: $color_one_seconde;
     }
   }
+  .alert-project {
+    width: 100%;
+    border-radius: 5px;
+    background: $color_one;
+    padding: 10px;
+    margin: 15px 0;
+    color: white;
+    box-shadow: 0 0 11px 2px #5465ff52;
+    -webkit-box-shadow: 0 0 11px 2px #5465ff52;
+  }
 }
 
 .button-more {
@@ -500,7 +510,7 @@ footer {
   background: $color_one_seconde;
   margin-top: 20px;
   position: relative;
-  font-family: 'vazir';
+  font-family: "vazir";
   border-radius: 5px;
   color: white;
   border: none;

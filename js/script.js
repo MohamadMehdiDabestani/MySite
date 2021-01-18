@@ -14,6 +14,7 @@ document.querySelector(".icon-responsive").addEventListener("click", () => {
 if (header.children.length == 2) {
   header.classList.add("small-header");
 }
-if (window.innerWidth <= 960) {
+if (window.innerWidth <= 960 && asidePost !== null) {
   asidePost.removeAttribute("uk-sticky");
 }
+console.log(window.innerWidth);
