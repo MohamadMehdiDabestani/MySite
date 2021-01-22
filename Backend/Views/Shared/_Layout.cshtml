@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/uikit-rtl.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <link rel="stylesheet" href="./css/responsive.min.css" />
+    @RenderSection("header" , true)
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <span class="icon-responsive" uk-toggle="target: #ul-nav;cls:active-nav"><span></span>
+        </span>
+        <ul id="ul-nav">
+            <li>
+                <a href="/">خانه</a>
+            </li>
+            <li>
+                <a href="/Project.html">پروژه دارم</a>
+            </li>
+        </ul>
+        <div class="header-container">
+            <div>
+                <h4>درباره ی من</h4>
+                <p>
+                    من محمد مهدی دبستانی هستم . طراح و توسعه دهنده ی وب از سال 1397 شروع
+                    کرده ام . در شاخه ی وب با تکنولوژی هایی کار کرده ام که قسمت پایین میتونید ببینید . همچنین شما
+                    میتوانید که رزومه ی من رو از طریق <a href="/CV.pdf" download>لینک</a> دریافت کنید
+                </p>
+            </div>
+            <div>
+                <img src="./images/logo.png" alt="Logo Mohamadmehdi" />
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <footer>
+        <div class="custom-shape-divider-top-1609738135">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="uk-container uk-text-center">
+            <h4>با من در ارتباط باشید</h4>
+            <img src="./images/icons8-github-48.png" uk-tooltip="MohamadMehdiDabestani" alt="my github" />
+            <img src="./images/icons8-phone-256.png" class="telephone" uk-tooltip="09135377502" alt="my telephone" />
+            <img src="./images/icons8-email-48.png" class="telephone" uk-tooltip="MohamadMehdiDeveloper"
+                alt="my email addres" />
+        </div>
+    </footer>
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
