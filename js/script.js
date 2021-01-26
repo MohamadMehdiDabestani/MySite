@@ -3,6 +3,9 @@ let header = document.querySelector("header");
 let navResponsive = document.querySelector("#ul-nav");
 let shadowNav = document.createElement("div");
 let asidePost = document.querySelector(".info-post");
+let pagging = document.querySelectorAll(".paging");
+let formListPost = document.querySelectorAll(".list_post");
+let pageId = document.querySelector("#pageId");
 document.querySelector(".icon-responsive").addEventListener("click", () => {
   shadowNav.classList.add("shadowNav");
   document.body.appendChild(shadowNav);
@@ -17,4 +20,7 @@ if (header.children.length == 2) {
 if (window.innerWidth <= 960 && asidePost !== null) {
   asidePost.removeAttribute("uk-sticky");
 }
-console.log(window.innerWidth);
+const paging = (numberPage) => {
+  pageId.value = numberPage;
+  formListPost.submit();
+};

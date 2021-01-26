@@ -1,0 +1,34 @@
+@model EditePostViewModel
+@section header {
+    <title>ساخت پست جدید</title>
+}
+<div class="uk-container uk-margin-large-top">
+    <form method="POST" asp-controller="Admin" asp-action="EditePost" enctype="multipart/form-data">
+    <input type="hidden"  asp-for="ImageName"/>
+        <div class="uk-text-danger" asp-validation-summary="All"></div>
+        <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+                <input class="uk-input" asp-for="Title" type="text" placeholder="Title" />
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" type="text" asp-for="Description" placeholder="Description" />
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" type="text" asp-for="Tages" placeholder="Tags" />
+                <p class="uk-text-middle">با - از یکدیگر جدا کن</p>
+            </div>
+
+            <div class="uk-margin">
+                <input class="uk-input" type="text" asp-for="Category" placeholder="Category" />
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" type="text" asp-for="AltImage" placeholder="Alt Image" />
+            </div>
+            <input type="file" asp-for="NewImage"/>
+            <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" placeholder="Text" asp-for="Text"></textarea>
+            </div>
+        </fieldset>
+        <button class="uk-button uk-button-secondary" type="submit">Send</button>
+    </form>
+</div>

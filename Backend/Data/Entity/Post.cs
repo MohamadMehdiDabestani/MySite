@@ -36,7 +36,7 @@ namespace Backend.Data
         public string Category { get; set; }
 
         [Display(Name = "نام عکس")]
-        [MaxLength(50)]
+        [MaxLength(150)]
         public string imageName { get; set; }
 
         [Display(Name = "متن جایگزین عکس")]

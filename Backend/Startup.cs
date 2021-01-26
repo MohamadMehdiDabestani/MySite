@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
+using Backend.MiddleWare;
+
 
 namespace Backend
 {
@@ -31,7 +33,8 @@ namespace Backend
             {
                 opt.UseSqlServer(Config.GetConnectionString("DefaultConection"));
             });
-            services.AddScoped<IHomeServices , HomeServices>();
+            services.AddScoped<IHomeServices, HomeServices>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,13 +44,18 @@ namespace Backend
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStatusCodePages();
             app.UseRouting();
+            app.UseMiddleware<ErrorHandlerPage>();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{Controller=Home}/{Action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "PageNotFound",
+                                "pagenotfound",
+                                new { controller = "Home", action = "PageNotFound" });
             });
         }
     }

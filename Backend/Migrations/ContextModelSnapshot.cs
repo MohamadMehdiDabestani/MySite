@@ -81,12 +81,33 @@ namespace Backend.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("imageName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("PostId");
 
                     b.ToTable("Post");
+                });
+
+            modelBuilder.Entity("Backend.Data.Projects", b =>
+                {
+                    b.Property<int>("ProjectId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("Url")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("ProjectId");
+
+                    b.ToTable("Prjects");
                 });
 #pragma warning restore 612, 618
         }

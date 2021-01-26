@@ -67,3 +67,8 @@
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Backend.RazorTargetAssemblyInfo.cs
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Backend.Views.pdb
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Home/PageNotFound.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Admin/CreatePost.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Admin/EditePost.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Home/GetPost.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Shared/AddProject.cshtml.g.cs

@@ -1,6 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using Backend.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Backend.Data
 {
@@ -11,9 +17,95 @@ namespace Backend.Data
         {
             this._db = db;
         }
-        public async Task<List<MyXp>> ListXp()
+
+        public async Task AddProject(Projects project)
+        {
+            await _db.AddAsync(project);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<int> PageCount()
+        {
+            return await _db.Post.CountAsync();
+        }
+
+        public async Task CreatePost(Post post)
+        {
+            await _db.Post.AddAsync(post);
+            await _db.SaveChangesAsync();
+        }
+
+        public void DeleteImage(string ImageName)
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/PostImages", ImageName);
+            if (File.Exists(path))
+                File.Delete(path);
+
+        }
+
+        public async Task DeletePost(Post post)
+        {
+            _db.Remove(post);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task DeleteProject(Projects project)
+        {
+            _db.Remove(project);
+            await _db.SaveChangesAsync();
+        }
+        public async Task<List<GetAllPostViewModel>> GetAllPost(int take,int pageId = 1)
+        {
+            if (take == 0)
+                take = 3;
+            int skip = (pageId - 1) * take;
+            return await _db.Post.OrderBy(p => p.CreateData).Select(p => new GetAllPostViewModel
+            {
+                AltImage = p.AltImage,
+                Description = p.Description,
+                id = p.PostId,
+                ImageName = p.imageName,
+                Title = p.Title,
+            }).Skip(skip).Take(take).ToListAsync();
+        }
+
+        public async Task<List<Projects>> GetAllProjects()
+        {
+
+            return await _db.Prjects.ToListAsync();
+        }
+
+        public async Task<List<MyXp>> GetAllXp()
         {
             return await _db.MyXp.ToListAsync();
         }
+
+        public async Task<Projects> GetFirstProject(string status, string? url)
+        {
+            return await _db.Prjects.FirstOrDefaultAsync(p => p.Status == status && p.Url == url);
+        }
+
+        public async Task<Post> GetPost(int id)
+        {
+            return await _db.Post.FindAsync(id);
+        }
+
+        public async Task UpdatePost(Post post)
+        {
+            _db.Update(post);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<string> UploadImage(IFormFile Image)
+        {
+            var imageSaveName = Guid.NewGuid().ToString() + Path.GetFileName(Image.FileName);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/PostImages", imageSaveName);
+            using (var streame = new FileStream(path, FileMode.Create))
+            {
+                await Image.CopyToAsync(streame);
+            }
+            return imageSaveName;
+        }
+
     }
 }

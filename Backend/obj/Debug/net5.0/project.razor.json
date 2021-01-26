@@ -15613,6 +15613,31 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/AddProject.cshtml",
+      "TargetPath": "Views\\Shared\\AddProject.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Admin/CreatePost.cshtml",
+      "TargetPath": "Views\\Admin\\CreatePost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/PageNotFound.cshtml",
+      "TargetPath": "Views\\Home\\PageNotFound.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/GetPost.cshtml",
+      "TargetPath": "Views\\Home\\GetPost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Admin/EditePost.cshtml",
+      "TargetPath": "Views\\Admin\\EditePost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
