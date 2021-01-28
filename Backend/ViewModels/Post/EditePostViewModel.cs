@@ -30,8 +30,6 @@ namespace Backend.ViewModels
         [MaxLength(150)]
         public string AltImage { get; set; }
         
-        [Display(Name = "متن جایگزین عکس")]
-        [Required(ErrorMessage = "باید {0} را وارد کنید")]
         public IFormFile NewImage { get; set; }
         
         [Display(Name = "کلمات کلیدی")]

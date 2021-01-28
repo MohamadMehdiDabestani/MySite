@@ -1,0 +1,16 @@
+@model AddXp
+<div id="AddXpModal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Add Xp</h2>
+        <form  method="POST" asp-action="AddXp" asp-controller="Admin">
+            <div class="uk-margin">
+                <input type="text" class="uk-input" placeholder="Title" asp-for="Title" />
+            </div>
+            <div class="uk-margin">
+                <input type="number" class="uk-input" placeholder="Value" asp-for="Value" />
+            </div>
+            <button class="uk-button uk-button-default" type="submit">Save</button>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+        </form>
+    </div>
+</div>

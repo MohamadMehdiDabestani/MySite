@@ -15633,6 +15633,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/_DeleteXp.cshtml",
+      "TargetPath": "Views\\Shared\\_DeleteXp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/_AddXp.cshtml",
+      "TargetPath": "Views\\Shared\\_AddXp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/GetPost.cshtml",
       "TargetPath": "Views\\Home\\GetPost.cshtml",
       "FileKind": "mvc"

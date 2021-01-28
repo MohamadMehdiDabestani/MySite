@@ -39,7 +39,13 @@ namespace Backend.Data
         Task<List<Comments>> GetAllComment();
         
         Task<List<Comments>> GetAllCommentInAdmin();
+        
         Task DeleteComment(int id);
+        
         Task OkComment(int id);
+
+        Task AddXp(MyXp xp);
+
+        Task DeleteXp(string title);
     }
 }

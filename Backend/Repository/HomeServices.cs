@@ -115,7 +115,7 @@ namespace Backend.Data
 
         public async Task<List<Comments>> GetAllComment()
         {
-            return await _db.Comment.Where(c => c.IsShowing == true).ToListAsync();
+            return await _db.Comment.Where(c => c.IsShowing == true).Take(4).ToListAsync();
         }
 
         public async Task<List<Comments>> GetAllCommentInAdmin()
@@ -136,6 +136,22 @@ namespace Backend.Data
             comment.IsShowing = true;
             _db.Comment.Update(comment);
             await _db.SaveChangesAsync();
+        }
+
+        public async Task AddXp(MyXp xp)
+        {
+            await _db.MyXp.AddAsync(xp);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task DeleteXp(string title)
+        {
+            var xp = await _db.MyXp.SingleOrDefaultAsync(x=> x.Title == title);
+            if(xp!= null)
+            {
+                _db.MyXp.Remove(xp);
+                await _db.SaveChangesAsync();
+            }
         }
     }
 }

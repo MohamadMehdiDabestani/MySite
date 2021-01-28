@@ -74,3 +74,5 @@
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Shared/AddProject.cshtml.g.cs
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Home/AddComment.cshtml.g.cs
 /media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Admin/GetAllComment.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Shared/_AddXp.cshtml.g.cs
+/media/mmd/inestall/My Site/Backend/obj/Debug/net5.0/Razor/Views/Shared/_DeleteXp.cshtml.g.cs

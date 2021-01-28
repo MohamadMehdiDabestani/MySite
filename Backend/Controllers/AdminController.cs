@@ -94,6 +94,7 @@ namespace Backend.Controllers
             if (post == null)
                 return NotFound();
             await _services.DeletePost(post);
+            _services.DeleteImage(post.imageName);
             return Redirect("/");
         }
         #endregion
@@ -135,6 +136,25 @@ namespace Backend.Controllers
         {
             await _services.DeleteComment(id);
             return Redirect("/admin/GetAllComment");
+        }
+        #endregion
+        #region XP
+        [HttpPost]
+        public async Task<IActionResult> AddXp(AddXp model)
+        {
+            if(!ModelState.IsValid)
+                return Redirect("/");
+            var xp = new MyXp {
+                Title = model.Title,
+                value = model.Value
+            };
+            await _services.AddXp(xp); 
+            return Redirect("/");
+        }
+        public async Task<IActionResult> DeleteXp(DeleteXp model)
+        {
+            await _services.DeleteXp(model.Title);
+            return Redirect("/");
         }
         #endregion
     }

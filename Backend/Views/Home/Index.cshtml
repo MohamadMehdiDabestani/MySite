@@ -10,6 +10,8 @@
     var CheckComment = ListComment.Count == 0 ? true : false; 
 }
 <partial name="AddProject" />
+<partial name="_AddXp" />
+<partial name="_DeleteXp" />
 @section headerContianer {
     <div class="header-container">
         <div>
@@ -22,6 +24,17 @@
             <li>
                 <a uk-toggle="target: #add_project_modal">
                     ثبت پروژه
+                </a>
+                
+            </li>
+            <li>
+                <a uk-toggle="target: #AddXpModal">
+                    ثبت تکنولوژی
+                </a>
+            </li>
+            <li>
+                <a uk-toggle="target: #DeleteXpModal">
+                    حذف تکنولوژی
                 </a>
             </li>
         </div>
