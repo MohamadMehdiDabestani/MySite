@@ -43,6 +43,11 @@ namespace Backend.Data
         [Required(ErrorMessage = "باید {0} را وارد کنید")]
         [MaxLength(150)]
         public string AltImage { get; set; }
+
+        [Display(Name = "متن جایگزین عکس")]
+        [Required(ErrorMessage = "باید {0} را وارد کنید")]
+        [MaxLength(100)]
+        public string TitleOfBrowser { get; set; }
     }
 
 }

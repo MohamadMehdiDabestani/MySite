@@ -517,6 +517,7 @@ footer {
   font-size: 17px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  outline: none !important;
   &:hover {
     box-shadow: 0 0 10px 1px $color_two;
   }

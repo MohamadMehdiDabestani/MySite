@@ -1,16 +1,14 @@
 @section header {
-    <meta name="description" content="من محمد مهدی هستم طراح و توسعه ی دهنده ی وب که از سال 1397" />
+    <meta name="description" content="من محمد مهدی هستم طراح و توسعه ی دهنده ی وب که از سال 1397 ..." />
     <title>محمد مهدی</title>
 }
 @{
     var listXp = ViewBag.ListXp as List<MyXp>;
     var listUrl = ViewBag.ProjectSuccesUrl;
     var listPost = ViewBag.ListPost as List<GetAllPostViewModel>;
+    var ListComment = ViewBag.Comments as List<Comments>;
+    var CheckComment = ListComment.Count == 0 ? true : false; 
 }
-<p>
-    page count =>  @ViewBag.pageCount
-    page id => @ViewBag.PageId
-</p>
 <partial name="AddProject" />
 @section headerContianer {
     <div class="header-container">
@@ -141,60 +139,31 @@
     <h3>نظرات مشتری :</h3>
     <div class="uk-position-relative uk-visible-toggle uk-light carousel" tabindex="-1"
         uk-slideshow="animation: push;autoplay:true;autoplay-interval:4000">
-        <ul class="uk-slideshow-items">
-            <li>
-                <div class="uk-position-center uk-position-small uk-text-center">
-                    <h2 uk-slideshow-parallax="x: 100,-100;y:300,150;opacity: 1,1,0">
-                        عنوان
-                    </h2>
-                    <p uk-slideshow-parallax="x: 200,-200;y:75,-50;opacity: 1,1,0">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
-                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="uk-position-center uk-position-small uk-text-center">
-                    <h2 uk-slideshow-parallax="x: 100,-100;y:300,150;opacity: 1,1,0">
-                        عنوان
-                    </h2>
-                    <p uk-slideshow-parallax="x: 200,-200;y:75,-50;opacity: 1,1,0">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
-                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
-                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="uk-position-center uk-position-small uk-text-center">
-                    <h2 uk-slideshow-parallax="y: 300,150; opacity: 1,1,0">عنوان</h2>
-                    <p uk-slideshow-parallax="y:75,-50; opacity: 1,1,0">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
-                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                    </p>
-                </div>
-            </li>
-        </ul>
+        @if(!CheckComment){
+            <ul class="uk-slideshow-items">
+                @foreach (var item in ListComment)
+                {
+                    <li>
+                        <div class="uk-position-center uk-position-small uk-text-center">
+                            <h2 uk-slideshow-parallax="x: 100,-100;y:300,150;opacity: 1,1,0">
+                                @item.CommentTitle
+                            </h2>
+                            <p uk-slideshow-parallax="x: 200,-200;y:75,-50;opacity: 1,1,0">
+                                @item.CommentText
+                            </p>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+            
         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
             uk-slideshow-item="next"></a>
         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
             uk-slideshow-item="previous"></a>
-        <ul class="navigation">
-            <li uk-slideshow-item="0"><a href="#"></a></li>
-            <li uk-slideshow-item="1"><a href="#"></a></li>
-            <li uk-slideshow-item="2"><a href="#"></a></li>
-        </ul>
+
     </div>
-    <div class="alert-comment">
-        <p>نظری وجود ندارد</p>
-    </div>
+    @if(CheckComment) {
+        <div class="alert-comment"><p>نظری وجود ندارد</p></div>
+    }
 </div>

@@ -37,6 +37,7 @@ namespace Backend.Controllers
                 Tags = model.Tags,
                 Text = model.Text,
                 Title = model.Title,
+                TitleOfBrowser = model.TitleOfBrowser
             };
             await _services.CreatePost(newPost);
             return Redirect("/");
@@ -117,6 +118,23 @@ namespace Backend.Controllers
             };
             await _services.AddProject(NewProject);
             return Redirect("/");
+        }
+        #endregion
+        #region Comment
+        public async Task<IActionResult> GetAllComment()
+        {
+            var model = await _services.GetAllCommentInAdmin();
+            return View(model);
+        }
+        public async Task<IActionResult> OkComment(int id)
+        {
+            await _services.OkComment(id);
+            return Redirect("/admin/GetAllComment");
+        }
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            await _services.DeleteComment(id);
+            return Redirect("/admin/GetAllComment");
         }
         #endregion
     }

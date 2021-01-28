@@ -54,7 +54,7 @@ namespace Backend.Data
             _db.Remove(project);
             await _db.SaveChangesAsync();
         }
-        public async Task<List<GetAllPostViewModel>> GetAllPost(int take,int pageId = 1)
+        public async Task<List<GetAllPostViewModel>> GetAllPost(int take, int pageId = 1)
         {
             if (take == 0)
                 take = 3;
@@ -107,5 +107,35 @@ namespace Backend.Data
             return imageSaveName;
         }
 
+        public async Task AddComment(Comments comment)
+        {
+            await _db.Comment.AddAsync(comment);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<List<Comments>> GetAllComment()
+        {
+            return await _db.Comment.Where(c => c.IsShowing == true).ToListAsync();
+        }
+
+        public async Task<List<Comments>> GetAllCommentInAdmin()
+        {
+            return await _db.Comment.Where(c=> c.IsShowing == false).ToListAsync();
+        }
+
+        public async Task DeleteComment(int id)
+        {
+            var comment = await _db.Comment.FindAsync(id);
+            _db.Comment.Remove(comment);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task OkComment(int id)
+        {
+            var comment = await _db.Comment.FindAsync(id);
+            comment.IsShowing = true;
+            _db.Comment.Update(comment);
+            await _db.SaveChangesAsync();
+        }
     }
 }

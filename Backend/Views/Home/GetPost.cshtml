@@ -1,4 +1,8 @@
 @model GetPostViewModel
+@section header {
+    <title>محمد مهدی - @Model.TitleOfBrowser</title>
+    <meta name="Description" content="@Model.Description" />
+}
 <div class="uk-container container-post">
     <div uk-grid>
         <div class="uk-width-expand">

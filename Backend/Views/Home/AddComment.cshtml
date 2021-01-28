@@ -1,0 +1,18 @@
+@model AddCommentViewModel
+@section header {
+    <title>افزودن دیدگاه</title>
+}
+<div class="uk-container uk-margin-large-top">
+  <form method="POST" action="/AddComment">
+    <div class="uk-text-danger" asp-validation-summary="All"></div>
+    <fieldset class="uk-fieldset">
+      <div class="uk-margin">
+        <input class="uk-input" type="text" asp-for="Title" placeholder="عنوان" />
+      </div>
+      <div class="uk-margin">
+        <textarea class="uk-textarea" rows="10" type="text" asp-for="Text" placeholder="متن"></textarea>
+      </div>
+    </fieldset>
+    <button type="submit" class="button-more">ارسال</button>
+  </form>
+</div>

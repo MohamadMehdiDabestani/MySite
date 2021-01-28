@@ -19,6 +19,35 @@ namespace Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
+            modelBuilder.Entity("Backend.Data.Comments", b =>
+                {
+                    b.Property<int>("CommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("CommentText")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("CommentTitle")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsShowing")
+                        .HasColumnType("bit");
+
+                    b.HasKey("CommentId");
+
+                    b.ToTable("Comment");
+                });
+
             modelBuilder.Entity("Backend.Data.MyXp", b =>
                 {
                     b.Property<int>("MyXpId")
@@ -76,6 +105,11 @@ namespace Backend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TitleOfBrowser")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");

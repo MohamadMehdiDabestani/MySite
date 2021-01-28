@@ -10,7 +10,11 @@ namespace Backend
 
         }
         public DbSet<Post> Post { get; set; }
+        
         public DbSet<MyXp> MyXp { get; set; }
+        
         public DbSet<Projects> Prjects { get; set; }
+
+        public DbSet<Comments> Comment { get; set; }
     }
 }

@@ -15628,6 +15628,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/AddComment.cshtml",
+      "TargetPath": "Views\\Home\\AddComment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/GetPost.cshtml",
       "TargetPath": "Views\\Home\\GetPost.cshtml",
       "FileKind": "mvc"
@@ -15635,6 +15640,11 @@
     {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Admin/EditePost.cshtml",
       "TargetPath": "Views\\Admin\\EditePost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Admin/GetAllComment.cshtml",
+      "TargetPath": "Views\\Admin\\GetAllComment.cshtml",
       "FileKind": "mvc"
     },
     {

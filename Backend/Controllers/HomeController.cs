@@ -18,9 +18,12 @@ namespace Backend.Controllers
         public async Task<ActionResult> Index(int pageid = 1)
         {
             // Post and paggination
-            ViewBag.ListPost = await _service.GetAllPost(3,pageid);
+            ViewBag.ListPost = await _service.GetAllPost(3, pageid);
             ViewBag.pageCount = await _service.PageCount() / 3;
             ViewBag.PageId = pageid;
+
+            // Comments
+            ViewBag.Comments = await _service.GetAllComment();
 
             // Xp view bag
             ViewBag.ListXp = await _service.GetAllXp();
@@ -56,8 +59,31 @@ namespace Backend.Controllers
                 ImageName = post.imageName,
                 Text = post.Text,
                 Title = post.Title,
+                TitleOfBrowser = post.TitleOfBrowser
             };
             return View(model);
+        }
+        [Route("/AddComment")]
+        public IActionResult AddComment()
+        {
+            return View();
+        }
+        [Route("/AddComment")]
+        [HttpPost]
+        public IActionResult AddComment(AddCommentViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var comment = new Comments
+            {
+                CommentText = model.Text,
+                CommentTitle = model.Title,
+                CreateDate = DateTime.Now,
+                IsShowing = false
+            };
+            _service.AddComment(comment);
+            return Redirect("/");
         }
     }
 }

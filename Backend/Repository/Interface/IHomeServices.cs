@@ -27,8 +27,19 @@ namespace Backend.Data
         Task DeletePost(Post post);
 
         Task UpdatePost(Post post);
+        
         Task AddProject(Projects project);
+        
         Task<Projects> GetFirstProject(string status, string? url);
+        
         Task DeleteProject(Projects project);
+        
+        Task AddComment(Comments comment);
+
+        Task<List<Comments>> GetAllComment();
+        
+        Task<List<Comments>> GetAllCommentInAdmin();
+        Task DeleteComment(int id);
+        Task OkComment(int id);
     }
 }

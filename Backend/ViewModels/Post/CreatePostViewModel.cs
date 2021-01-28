@@ -35,5 +35,11 @@ namespace Backend.ViewModels
         [Required(ErrorMessage = "باید {0} را وارد کنید")]
         [MaxLength(150)]
         public string Category { get; set; }
+
+
+        [Display(Name = "عنوان مرورگر")]
+        [Required(ErrorMessage = "باید {0} را وارد کنید")]
+        [MaxLength(150)]
+        public string TitleOfBrowser { get; set; }
     }
 }

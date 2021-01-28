@@ -21,5 +21,7 @@ namespace Backend.ViewModels
 
         public string CreateDate { get; set; }
 
+        public string TitleOfBrowser { get; set; }
+
     }
 }
