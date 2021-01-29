@@ -1,0 +1,75 @@
+@model CreateProjectViewModel
+@section header {
+    <title>محمد مهدی - تعریف پروژه</title>
+}
+<div class="uk-container uk-margin-large-top">
+    <div class="form-project">
+        @if(ViewBag.Succes == true) {
+            <div class="alert-project">
+              پروژه با موفقیت ثبت شد منتظر پیام من باشد . با تشکر .
+            </div>
+        }
+    <form action="/CreateProject" method="POST">
+        <div class="uk-text-danger" asp-validation-summary="All"></div>
+        <div class="inputs">
+            <div class="input-cover">
+                <input type="text" id="Name" asp-for="Name" required />
+                <label for="Name">نام</label>
+            </div>
+            <div class="input-cover">
+                <input type="text" id="ProjectEnviroment" asp-for="Environment" required />
+                <label for="ProjectEnviroment">زمینه ی پروژه</label>
+            </div>
+            <div class="input-cover">
+                <input type="text" id="ProjectTechnology" asp-for="Technology" required />
+                <label for="ProjectTechnology">تکنولوژی ها</label>
+                <p>با استفاده از - از یکدیگر جداکنید</p>
+            </div>
+            
+        </div>
+        <div class="inputs">
+            <div class="input-cover">
+                <input type="text" id="ProjectTime" required asp-for="Time" />
+                <label for="ProjectTime">زمان دریافت پروژه</label>
+            </div>
+            <div class="input-cover">
+                <input type="number" id="PhoneNumber" required asp-for="Phone" />
+                <label for="PhoneNumber">شماره ی همراه</label>
+            </div>
+            <div class="input-cover">
+                <input type="number" id="ProjectMoney" required asp-for="Price" />
+                <label for="ProjectMoney">بودجه</label>
+                <p>به تومان</p>
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="input-cover">
+                <input type="email" id="Email" required asp-for="Email" />
+                <label for="Email">ایمیل</label>
+            </div>
+        </div>
+        <div class="input-cover" id="text-area">
+            <textarea id="AboutProject" required asp-for="Text"></textarea>
+            <label for="AboutProject">توضیحات مرود نیاز برای پروژه</label>
+        </div>
+
+        <p class="uk-margin-small-bottom">
+            از چه طریق با شما در ارتباط باشم ؟
+        </p>
+        <div class="input-cover uk-margin-small-bottom">
+            <input type="checkbox" class="uk-checkbox" id="Telegram"  asp-for="IsTelegram" />
+            <label for="Telegram">تلگرام</label>
+        </div>
+        <div class="input-cover uk-margin-small-bottom">
+            <input type="checkbox" id="whatsapp" class="uk-checkbox" asp-for="IsWhatsapp"  />
+            <label for="whatsapp">واتساپ</label>
+        </div>
+        <div class="input-cover ">
+            <input type="checkbox" id="Email" class="uk-checkbox" asp-for="IsEmail"  />
+            <label for="Email">ایمیل</label>
+        </div>
+        <button type="submit" class="button-more">ارسال</button>
+        
+    </form>
+    </div>
+</div>

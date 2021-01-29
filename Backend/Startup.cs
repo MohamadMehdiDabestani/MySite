@@ -34,7 +34,7 @@ namespace Backend
                 opt.UseSqlServer(Config.GetConnectionString("DefaultConection"));
             });
             services.AddScoped<IHomeServices, HomeServices>();
-
+            services.AddScoped<IViewRenderService , RenderViewToString>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

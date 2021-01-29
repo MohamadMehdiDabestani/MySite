@@ -9,7 +9,7 @@
     var ListComment = ViewBag.Comments as List<Comments>;
     var CheckComment = ListComment.Count == 0 ? true : false; 
 }
-<partial name="AddProject" />
+<partial name="_AddProject" />
 <partial name="_AddXp" />
 <partial name="_DeleteXp" />
 @section headerContianer {
@@ -157,6 +157,8 @@
                 @foreach (var item in ListComment)
                 {
                     <li>
+                                <a class="uk-button uk-button-danger" style="max-height: 20px !important;
+    min-height: 35px !important;" href="/Admin/DeleteComment/@item.CommentId">Delete</a>
                         <div class="uk-position-center uk-position-small uk-text-center">
                             <h2 uk-slideshow-parallax="x: 100,-100;y:300,150;opacity: 1,1,0">
                                 @item.CommentTitle

@@ -11,8 +11,11 @@ namespace Backend.Controllers
     public class HomeController : Controller
     {
         private readonly IHomeServices _service;
-        public HomeController(IHomeServices service)
+        private readonly IViewRenderService _render;
+
+        public HomeController(IHomeServices service, IViewRenderService render)
         {
+            this._render = render;
             this._service = service;
         }
         public async Task<ActionResult> Index(int pageid = 1)
@@ -84,6 +87,22 @@ namespace Backend.Controllers
             };
             _service.AddComment(comment);
             return Redirect("/");
+        }
+        [Route("/CreateProject")]
+        public IActionResult AddProject()
+        {
+            return View();
+        }
+        [Route("/CreateProject")]
+        [HttpPost]
+        public IActionResult AddProject(CreateProjectViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+            string body =  _render.RenderToStringAsync("Email" , model);
+            SendEmail.Send("MohamadMehdiDeveloper@gmail.com" , "پروژه داری !" , body);
+            ViewBag.Succes = true;
+            return View();
         }
     }
 }

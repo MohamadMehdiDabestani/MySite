@@ -15603,6 +15603,11 @@
   "RootNamespace": "Backend",
   "Documents": [
     {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/_AddProject.cshtml",
+      "TargetPath": "Views\\Shared\\_AddProject.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15613,8 +15618,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/AddProject.cshtml",
-      "TargetPath": "Views\\Shared\\AddProject.cshtml",
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/Email.cshtml",
+      "TargetPath": "Views\\Shared\\Email.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15640,6 +15645,11 @@
     {
       "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Shared/_AddXp.cshtml",
       "TargetPath": "Views\\Shared\\_AddXp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/mmd/inestall/My Site/Backend/Views/Home/AddProject.cshtml",
+      "TargetPath": "Views\\Home\\AddProject.cshtml",
       "FileKind": "mvc"
     },
     {
